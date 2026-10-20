@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Install Alt Text Viewer</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 650px; margin: 40px auto; padding: 20px; text-align: center; }
+        .card { border: 1px solid #e1e4e8; border-radius: 16px; padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); background: white; }
+        h1 { color: #0078d4; font-size: 28px; margin-bottom: 10px; }
+        .button { 
+            display: inline-block; padding: 18px 40px; background: #0078d4; color: white !important; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0,120,212,0.4); cursor: move; margin: 25px 0; transition: all 0.2s;
+        }
+        .button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,120,212,0.5); }
+        .instructions { text-align: left; background: #f8f9fa; padding: 25px; border-radius: 12px; margin-top: 35px; border: 1px solid #eee; }
+        .disclaimer { background: #fff4ce; border-left: 5px solid #ffbb00; padding: 15px; margin-top: 25px; text-align: left; font-size: 14px; color: #6d5200; border-radius: 4px; }
+        .platform-row { display: flex; align-items: center; margin-bottom: 15px; }
+        .logo { width: 24px; height: 24px; margin-right: 12px; flex-shrink: 0; }
+        .platform-text { font-size: 14px; color: #444; }
+        .platform-name { font-weight: bold; color: #000; display: block; margin-bottom: 4px; }
+        kbd { background: #fff; border: 1px solid #adb5bd; padding: 3px 6px; border-radius: 4px; font-weight: bold; font-family: inherit; font-size: 13px; box-shadow: 0 1px 0 rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Alt Text Viewer</h1>
+    <p>Follow the steps below to add the accessibility checker to your browser.</p>
+    
+    <a class="button" href="javascript:(function()%7Bconst%20r%3D(d%2Cwin)%3D%3E%7Bd.querySelectorAll('.atv-overlay').forEach(l%3D%3El.remove())%3Bd.querySelectorAll('img').forEach(e%3D%3E%7Bconst%20l%3De.getAttribute('alt')%2Crect%3De.getBoundingClientRect()%2Cw%3De.offsetWidth%2Ch%3De.offsetHeight%2Csrc%3D(e.src%7C%7C'').toLowerCase()%2Ccls%3D(e.className%7C%7C'').toLowerCase()%2Cid%3D(e.id%7C%7C'').toLowerCase()%3Bif(w%3C5%7C%7Ch%3C5)return%3Bconst%20decKws%3D%5B'icon'%2C'bg'%2C'divider'%2C'spacer'%2C'banner'%2C'decorative'%2C'bullet'%2C'check'%2C'arrow'%2C'chevron'%2C'separator'%2C'logo'%2C'placeholder'%2C'presentation'%2C'hidden'%2C'ornament'%2C'accent'%5D%3Bif(decKws.some(kw%3D%3Esrc.includes(kw)%7C%7Ccls.includes(kw)%7C%7Cid.includes(kw)))return%3Bconst%20isEmptyAlt%3D(l!%3D%3Dnull%26%26l.trim()%3D%3D%3D'')%2CisMissingAttr%3D(l%3D%3D%3Dnull)%2CisSmall%3D(w%3C%3D150%26%26h%3C%3D150)%3Bif(isEmptyAlt%26%26isSmall)return%3Blet%20n%3D''%2Co%3D''%2Cborder%3D'2px%20solid%20rgba(255%2C255%2C255%2C0.3)'%2CtextColor%3D'white'%2Cfont%3D'16px'%2CshowReport%3Dfalse%3Bif(isMissingAttr%7C%7CisEmptyAlt)%7Bn%3DisMissingAttr%3F'%E2%9D%8C%20Missing%20Alt%20Text'%3A'%E2%9D%8C%20Missing%20Alt%20Text'%3Bo%3D'linear-gradient(180deg%2C%20rgba(220%2C0%2C0%2C0.95)%200%25%2C%20rgba(150%2C0%2C0%2C0.8)%20100%25)'%3BshowReport%3Dtrue%7Delse%7Bn%3Dl%3Bo%3D'linear-gradient(180deg%2C%20rgba(0%2C0%2C0%2C0.9)%200%25%2C%20rgba(0%2C0%2C0%2C0.6)%20100%25)'%7Dconst%20t%3Dd.createElement('div')%3Bt.className%3D'atv-overlay'%3BObject.assign(t.style%2C%7Bposition%3A'absolute'%2Ctop%3A(rect.top%2Bwin.scrollY)%2B'px'%2Cleft%3A(rect.left%2Bwin.scrollX)%2B'px'%2Cwidth%3Aw%2B'px'%2Cheight%3Ah%2B'px'%2Cbackground%3Ao%2Ccolor%3AtextColor%2Cpadding%3A'12px'%2CfontWeight%3A'600'%2CfontFamily%3A'sans-serif'%2CzIndex%3A'2147483647'%2CborderRadius%3A'6px'%2CboxSizing%3A'border-box'%2Coverflow%3A'hidden'%2Cdisplay%3A'flex'%2CflexDirection%3A'column'%2CjustifyContent%3A'space-between'%2Cborder%3Aborder%2CpointerEvents%3A'none'%7D)%3Bconst%20txt%3Dd.createElement('div')%3Btxt.innerText%3Dn%3BObject.assign(txt.style%2C%7BwordBreak%3A'break-word'%2Coverflow%3A'hidden'%2Cdisplay%3A'-webkit-box'%2CwebkitLineClamp%3A'10'%2CwebkitBoxOrient%3A'vertical'%2CfontSize%3Afont%2ClineHeight%3A'1.3'%7D)%3Bconst%20ctrl%3Dd.createElement('div')%3BObject.assign(ctrl.style%2C%7Bdisplay%3A'flex'%2CflexWrap%3A'wrap'%2Cgap%3A'10px'%2CmarginTop%3A'8px'%2CpointerEvents%3A'auto'%7D)%3Bconst%20hi%3Dd.createElement('button')%3Bhi.innerText%3D'%E2%9C%95%20Close'%3BObject.assign(hi.style%2C%7Bbackground%3A'rgba(255%2C255%2C255%2C0.3)'%2Cborder%3A'none'%2Ccolor%3A'white'%2Cpadding%3A'6px%2012px'%2CborderRadius%3A'4px'%2Ccursor%3A'pointer'%2CfontSize%3A'13px'%2CfontWeight%3A'bold'%7D)%3Bhi.onclick%3D()%3D%3Et.remove()%3Bconst%20ex%3Dd.createElement('button')%3Bex.innerText%3D'%E2%86%97%20Expand'%3BObject.assign(ex.style%2C%7Bbackground%3A'rgba(255%2C255%2C255%2C0.3)'%2Cborder%3A'none'%2Ccolor%3A'white'%2Cpadding%3A'6px%2012px'%2CborderRadius%3A'4px'%2Ccursor%3A'pointer'%2CfontSize%3A'13px'%2CfontWeight%3A'bold'%7D)%3Bex.onclick%3D()%3D%3E%7Bconst%20m%3Dwindow.top.document.createElement('div')%3BObject.assign(m.style%2C%7Bposition%3A'fixed'%2Ctop%3A'0'%2Cleft%3A'0'%2Cwidth%3A'100%25'%2Cheight%3A'100%25'%2Cbackground%3A'rgba(0%2C0%2C0%2C0.8)'%2CzIndex%3A'2147483648'%2Cdisplay%3A'flex'%2CalignItems%3A'center'%2CjustifyContent%3A'center'%2Cpadding%3A'20px'%7D)%3Bconst%20c%3Dwindow.top.document.createElement('div')%3BObject.assign(c.style%2C%7Bbackground%3A'white'%2Ccolor%3A'black'%2Cpadding%3A'30px'%2CborderRadius%3A'12px'%2CmaxWidth%3A'650px'%2Cwidth%3A'90%25'%2CboxShadow%3A'0%2020px%2040px%20rgba(0%2C0%2C0%2C0.5)'%2Cposition%3A'relative'%7D)%3Bconst%20fn%3D(e.src%7C%7C'').split('%2F').pop().split('%3F')%5B0%5D%3Blet%20det%3D'%3Ch3%20style%3D%22margin-top%3A0%3Bfont-size%3A20px%22%3EFull%20Alt%20Text%3C%2Fh3%3E%3Cp%20style%3D%22white-space%3Apre-wrap%3Bline-height%3A1.6%3Bfont-size%3A16px%22%3E'%2Bn%2B'%3C%2Fp%3E'%3Bif(showReport)%7Bdet%2B%3D'%3Chr%20style%3D%22margin%3A20px%200%3Bborder%3A0%3Bborder-top%3A1px%20solid%20%23eee%22%3E%3Cp%20style%3D%22font-size%3A14px%3Bcolor%3A%23666%22%3E%3Cstrong%3EFile%3A%3C%2Fstrong%3E%20'%2Bfn%2B'%3C%2Fp%3E%3Cp%20style%3D%22font-size%3A12px%3Bcolor%3A%23999%3Bword-break%3Abreak-all%22%3E'%2Be.src%2B'%3C%2Fp%3E'%7Dc.innerHTML%3Ddet%2B'%3Cbutton%20id%3D%22atv-cls%22%20style%3D%22margin-top%3A20px%3Bpadding%3A12px%2024px%3Bbackground%3A%230078d4%3Bcolor%3Awhite%3Bborder%3Anone%3Bborder-radius%3A6px%3Bcursor%3Apointer%3Bfont-weight%3Abold%3Bfont-size%3A16px%22%3EClose%20Viewer%3C%2Fbutton%3E'%3Bm.appendChild(c)%3Bwindow.top.document.body.appendChild(m)%3Bwindow.top.document.getElementById('atv-cls').onclick%3D()%3D%3Em.remove()%7D%3Bctrl.appendChild(ex)%3Bctrl.appendChild(hi)%3Bt.appendChild(txt)%3Bt.appendChild(ctrl)%3Bd.body.appendChild(t)%3Bif(txt.scrollHeight%3E(h-45))%7Btxt.style.fontSize%3D'14px'%7D%7D)%3Bd.querySelectorAll('iframe').forEach(f%3D%3E%7Btry%7Bif(f.contentDocument)r(f.contentDocument%2Cf.contentWindow)%7Dcatch(e)%7B%7D%7D)%7D%3Br(document%2Cwindow)%7D)()%3B">
+        🔍 Alt Text Viewer
+    </a>
+
+    <div class="instructions">
+        <div class="platform-row">
+            <svg class="logo" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg"><path d="M0 12.402l35.687-4.86.016 34.423-35.67.203L0 12.402zm35.67 34.195l.032 34.453-35.67-4.89-.031-29.78 35.669.217zM39.717 6.94l48.282-7.143V41.53l-48.282.522V6.94zm48.282 38.835l-.015 41.675-48.267-7.115-.015-35.082 48.297.522z" fill="#00ADEF"/></svg>
+            <div class="platform-text">
+                <span class="platform-name">Windows (Chrome or Edge)</span>
+                Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> to show your bookmarks bar.
+            </div>
+        </div>
+
+        <div class="platform-row" style="margin-top: 25px;">
+            <svg class="logo" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 21.8-88.5 21.8-11.4 0-51.1-22.1-82.6-21.2-41.2.6-78.9 23.9-100.1 60.5-43.5 75.5-11.1 187.1 30.9 247.9 20.6 29.7 45.4 63.3 77.2 62.1 30.9-1.2 42.5-20.1 79.8-20.1 37.1 0 48.1 20.1 80.4 19.5 33-1.2 54.4-30.3 74.8-60.5 23.5-34.4 33-67.7 33.5-69.5-1-1-65.5-25.2-65.7-95.3zM242.4 92.5c15.6-18.9 26.2-45.2 23.3-71.5-22.7 1-49.9 15.2-66.2 34.3-14.6 17-27.4 44.1-24.1 69.8 25.1 2 51.4-13.7 67-32.6z" fill="#555"/></svg>
+            <div class="platform-text">
+                <span class="platform-name">Apple Mac (Chrome or Safari)</span>
+                Press <kbd>Cmd ⌘</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> to show your bookmarks bar.
+            </div>
+        </div>
+
+        <p style="margin-top: 25px; margin-bottom: 0;">Once the bar is visible, <strong>drag the magnifying glass button</strong> above directly onto that bar.</p>
+    </div>
+</div>
+
+</body>
+</html>
